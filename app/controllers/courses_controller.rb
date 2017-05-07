@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :students, :assignments]
 
   # GET /courses
   # GET /courses.json
@@ -61,6 +61,12 @@ class CoursesController < ApplicationController
     end
   end
 
+  def students
+  end
+
+  def assignments
+    @assignments = Assignment.where("course_id = ?", @course.id)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course

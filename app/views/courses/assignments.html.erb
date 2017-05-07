@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<%= render 'submenu'%>
+<h1>Assignments</h1>
+
+<%= render 'assignments/list', assignments:@assignments%>
+
+
+<br>
+
+<%= link_to 'New Assignments', new_assignment_path %>
